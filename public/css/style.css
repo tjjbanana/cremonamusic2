@@ -526,3 +526,50 @@ body.zh span[data-en] { display:none; }
 /* FADE IN */
 .fade-in { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease,transform 0.7s ease; }
 .fade-in.visible { opacity:1; transform:translateY(0); }
+
+/* ── RESPONSIVE IMPROVEMENTS ── */
+
+/* Prevent horizontal bleed on all screens */
+html, body { overflow-x:hidden; }
+
+/* iPad / tablet  769px – 1024px */
+@media (max-width:1024px) and (min-width:769px) {
+  section { padding:80px 28px; }
+  .lessons-grid { grid-template-columns:repeat(2,1fr); }
+  .events-grid  { grid-template-columns:repeat(2,1fr); }
+  .achievements-grid { grid-template-columns:repeat(2,1fr); }
+  .recital-layout { gap:44px; }
+  .contact-grid   { gap:36px; }
+}
+
+/* Phones  ≤600px */
+@media (max-width:600px) {
+  section { padding:56px 16px; }
+  footer  { padding:36px 16px 20px; }
+  .footer-inner { gap:16px; }
+  .hero-sub { font-size:0.72rem; letter-spacing:0.07em; }
+  .hero-btns { flex-direction:column; align-items:center; gap:12px; }
+  .btn-primary { width:100%; max-width:300px; padding:14px 20px; text-align:center; }
+  .btn-outline  { width:100%; max-width:300px; padding:14px 20px; text-align:center; justify-content:center; }
+  .wa-btn { width:100%; justify-content:center; }
+  .modal-box { padding:32px 20px; }
+  .lesson-card { padding:36px 20px; }
+  .event-card  { padding:28px 20px; }
+  .awards-row  { gap:12px; }
+  .award-badge { padding:10px 14px; }
+  .award-badge .num { font-size:1.6rem; }
+  .contact-grid { gap:36px; }
+  .map-wrapper  { height:240px; }
+  .recital-img  { height:220px; }
+}
+
+/* Very small phones  ≤380px */
+@media (max-width:380px) {
+  section { padding:44px 14px; }
+  .section-title { font-size:clamp(1.5rem,8.5vw,2.2rem); }
+  .hero h1  { font-size:clamp(1.9rem,9vw,2.8rem); }
+  .hero-sub { letter-spacing:0.04em; }
+  .modal-box { padding:24px 14px; }
+  .achievements-grid { grid-template-columns:1fr 1fr; }
+  .lesson-card { padding:28px 16px; }
+}
