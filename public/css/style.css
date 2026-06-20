@@ -165,7 +165,7 @@ body.zh .nav-links a {
 }
 
 /* Very small phones — hide social icons from top bar (they're in the dropdown) */
-@media (max-width:422px) {
+@media (max-width:435px) {
   .mobile-top-right .nav-social { display:none !important; }
   .mobile-top-right { gap:6px; }
   .mobile-top-right .lang-btn { font-size:0.52rem; padding:6px 8px; }
