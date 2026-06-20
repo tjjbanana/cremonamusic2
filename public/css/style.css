@@ -164,6 +164,15 @@ body.zh .nav-links a {
   .mobile-nav-inner { padding:6px 16px 16px; }
 }
 
+/* Very small phones — hide social icons from top bar (they're in the dropdown) */
+@media (max-width:422px) {
+  .mobile-top-right .nav-social { display:none !important; }
+  .mobile-top-right { gap:6px; }
+  .mobile-top-right .lang-btn { font-size:0.52rem; padding:6px 8px; }
+  #navLogoMobile { height:34px !important; }
+  .nav-inner { padding:0 12px; }
+}
+
 /* HERO */
 .hero { height:100vh; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
 .hero-bg-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(62,31,10,0.72) 0%,rgba(107,62,38,0.5) 50%,rgba(201,168,92,0.2) 100%); z-index:1; }
