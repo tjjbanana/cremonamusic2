@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cremona Music of Strings</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <div class="nav-logo"><img id="navLogoImg" src="" alt="Cremona Music"><img id="navLogoMobile" src="" alt="Cremona Music" style="display:none;"></div>
+    <div class="nav-links">
+      <a href="#home" onclick="navTo('home')"><span data-en="">Home</span><span data-zh="">首頁</span></a>
+      <a href="#about" onclick="navTo('about')"><span data-en="">About Us</span><span data-zh="">關於我們</span></a>
+      <a href="#lessons" onclick="navTo('lessons')"><span data-en="">Music Lessons</span><span data-zh="">音樂課程</span></a>
+      <a href="#recital" onclick="navTo('recital')"><span data-en="">Recital Hall</span><span data-zh="">演奏廳</span></a>
+      <a href="#achievements" onclick="navTo('achievements')"><span data-en="">Achievements</span><span data-zh="">學生成就</span></a>
+      <a href="#events" onclick="navTo('events')"><span data-en="">Events</span><span data-zh="">活動</span></a>
+      <a href="#shop" onclick="navTo('shop')"><span data-en="">Instrument Shop</span><span data-zh="">樂器店</span></a>
+      <a href="#contact" onclick="navTo('contact')"><span data-en="">Contact</span><span data-zh="">聯絡我們</span></a>
+      <div class="nav-social">
+        <a href="https://www.facebook.com/share/1AdGYzPMc4/?mibextid=wwXIfr" target="_blank" title="Facebook"><svg viewbox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"></path></svg></a>
+        <a href="https://www.instagram.com/cremonamusicschool?igsh=MTNhenJqM3VhenI0Mg==" target="_blank" title="Instagram"><svg viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></a>
+      </div>
+      <button class="lang-btn lang-toggle-btn" id="langToggle">中文</button>
+    </div>
+    <div class="mobile-top-right">
+      <div class="nav-social" style="display:flex;">
+        <a href="https://www.facebook.com/share/1AdGYzPMc4/?mibextid=wwXIfr" target="_blank" title="Facebook"><svg viewbox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"></path></svg></a>
+        <a href="https://www.instagram.com/cremonamusicschool?igsh=MTNhenJqM3VhenI0Mg==" target="_blank" title="Instagram"><svg viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></a>
+      </div>
+      <button class="lang-btn lang-toggle-btn" id="langToggleMobile2">中文</button>
+      <button class="mobile-menu-btn" id="mobileBtn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </div>
+  <!-- MOBILE COLLAPSIBLE -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-inner">
+      <a href="#home" onclick="mobileNavTo('home')"><span data-en="">Home</span><span data-zh="">首頁</span></a>
+      <a href="#about" onclick="mobileNavTo('about')"><span data-en="">About Us</span><span data-zh="">關於我們</span></a>
+      <a href="#lessons" onclick="mobileNavTo('lessons')"><span data-en="">Music Lessons</span><span data-zh="">音樂課程</span></a>
+      <a href="#recital" onclick="mobileNavTo('recital')"><span data-en="">Recital Hall</span><span data-zh="">演奏廳</span></a>
+      <a href="#achievements" onclick="mobileNavTo('achievements')"><span data-en="">Achievements</span><span data-zh="">學生成就</span></a>
+      <a href="#events" onclick="mobileNavTo('events')"><span data-en="">Events</span><span data-zh="">活動</span></a>
+      <a href="#shop" onclick="mobileNavTo('shop')"><span data-en="">Instrument Shop</span><span data-zh="">樂器店</span></a>
+      <a href="#contact" onclick="mobileNavTo('contact')"><span data-en="">Contact</span><span data-zh="">聯絡我們</span></a>
+      <div class="mobile-nav-extras">
+        <div class="nav-social">
+          <a href="https://www.facebook.com/share/1AdGYzPMc4/?mibextid=wwXIfr" target="_blank" title="Facebook"><svg viewbox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"></path></svg></a>
+          <a href="https://www.instagram.com/cremonamusicschool?igsh=MTNhenJqM3VhenI0Mg==" target="_blank" title="Instagram"><svg viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></a>
+        </div>
+        <button class="lang-btn lang-toggle-btn" id="langToggleMobile3">中文</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-img" id="heroBg"></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-tagline"><span data-en=""> </span><span data-zh=""> </span></p>
+    <h1><span data-en="">Cremona <em>Music</em><br>of Strings</span><span data-zh="">克雷莫納<em>音樂</em><br>弦樂工作室</span></h1>
+    <p class="hero-sub"><span data-en="">Music School &amp; Instrument Shop &#183; 台北音樂工作室</span><span data-zh="">音樂學校 &amp; 樂器店 &#183; 台北音樂工作室</span></p>
+    <div class="hero-btns">
+      <a href="#lessons" class="btn-primary" onclick="return navTo('lessons')"><span data-en="">Explore Classes</span><span data-zh="">探索課程</span></a>
+      <a href="#contact" class="btn-outline" onclick="return navTo('contact')" style="display:inline-flex;align-items:center;gap:10px;"><svg width="16" height="16" viewbox="0 0 24 24" fill="currentColor" style="flex-shrink:0;border-radius:50%;background:rgba(255,255,255,0.15);padding:1px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg><span data-en="">Contact Us</span><span data-zh="">聯絡我們</span></a>
+    </div>
+  </div>
+  <div class="scroll-ind"><span data-en="">Scroll</span><span data-zh="">滾動</span></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout" style="grid-template-columns:1fr;max-width:720px;">
+    <div class="about-text fade-in">
+        <p class="section-label"><span data-en="">Our Story</span><span data-zh="">我們的故事</span></p>
+        <div class="divider"></div>
+        <h2 class="section-title"><span data-en="">About <em>Cremona</em></span><span data-zh="">關於<em>克雷莫納</em></span></h2>
+        <p class="section-desc"><span data-en="">With our commitment and dedication to bring out the best in our students whilst providing a nurturing and holistic musical experience, we welcome you to Cremona Music of Strings, a Premier School where Music Comes Alive!</span><span data-zh="">我們致力於培育音樂教養及提供完整音樂體驗，引導出學生最佳的潛力。歡迎您來到讓音樂充滿活力的優質學校－－Cremona Music of Strings！</span></p>
+        <p class="section-desc" style="margin-top:16px;"><span data-en="">Cremona Music of Strings 台北音樂工作室 is the first professional strings school in Malaysia with a music shop within its premises. In Malaysia 2010, it expanded to include a Violin and Viola department. Since then, it has continued to grow in terms of student population and teachers. Cremona Music Shop is located within Cremona Music of Strings’s premises. The shop retails quality stringed instruments, bows and accessories. Instruments service (repairing &amp; restoring) and maintenance. All products are imported directly from Taiwan Handmade factory which supplies to Australia, Europe and the States.
+
+</span><span data-zh="">台北音樂工作室（Cremona Music of Strings）是馬來西亞第一個設有樂器商店的專業弦樂學校。 2010年，工作室在馬來西亞增設了小提琴和中提琴系。此後，學生人數和教師隊伍持續成長。台北音樂工作室內的樂器店（Cremona Music Shop）販售高品質的弦樂器、琴弓及配件，並提供樂器維修保養服務。所有產品均直接從台灣手工樂器工廠進口，該工廠也向澳洲、歐洲和美國供貨。</span></p>
+        <div class="awards-row">
+          <div class="award-badge"><span class="num">Many</span><span class="label"><span data-en="">Awards</span><span data-zh="">獎項</span></span></div>
+          <div class="award-badge"><span class="num">∞</span><span class="label"><span data-en="">Passion</span><span data-zh="">熱情</span></span></div>
+          <div class="award-badge"><span class="num">All</span><span class="label"><span data-en="">Ages Welcome</span><span data-zh="">歡迎各年齡</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO CAROUSEL -->
+<div class="carousel-section">
+  <div class="carousel-viewport" id="carouselViewport">
+    <img src="images/photos/carousel_1.jpg" alt="Cremona Music" class="carousel-slide center" loading="eager" fetchpriority="high">
+    <img src="images/photos/carousel_2.jpg" alt="Cremona Music" class="carousel-slide right" loading="eager" fetchpriority="high">
+    <img src="images/photos/carousel_3.jpg" alt="Cremona Music" class="carousel-slide left" loading="eager" fetchpriority="high">
+    <img src="images/photos/carousel_4.jpg" alt="Cremona Music" class="carousel-slide far-right" loading="lazy">
+    <img src="images/photos/carousel_5.jpg" alt="Cremona Music" class="carousel-slide far-left" loading="lazy">
+    <img src="images/photos/carousel_6.jpg" alt="Cremona Music" class="carousel-slide" loading="lazy">
+    <img src="images/photos/carousel_7.jpg" alt="Cremona Music" class="carousel-slide" loading="lazy">
+    <img src="images/photos/carousel_8.jpg" alt="Cremona Music" class="carousel-slide" loading="lazy">
+    <img src="images/photos/carousel_9.jpg" alt="Cremona Music" class="carousel-slide" loading="lazy">
+  </div>
+</div>
+
+<!-- LESSONS -->
+<section id="lessons">
+  <div class="container">
+    <p class="section-label fade-in"><span data-en="">What We Offer</span><span data-zh="">我們的課程</span></p>
+    <div class="divider"></div>
+    <h2 class="section-title fade-in"><span data-en="">Music Lessons for Every Stage</span><span data-zh="">每個階段的音樂課程</span></h2>
+    <p class="section-desc fade-in"><span data-en="">Whether you are picking up a bow for the first time or preparing for a competition, our experienced teachers guide you with structured, personalised instruction.</span><span data-zh="">無論您是第一次拿起琴弓，還是準備參加比賽，我們經驗豐富的老師都會以有條理、個人化的方式指導您。</span></p>
+    <div class="lessons-grid fade-in">
+      <div class="lesson-card">
+        <span class="lesson-icon"><img src="images/icons/piano.png" alt="piano" width="105" height="125"></span>
+        <h3><span data-en="">Piano</span><span data-zh="">鋼琴</span></h3>
+        <p><span data-en="">Classical piano education for children and adults. </span><span data-zh="">適合兒童和成人的古典鋼琴教育。</span></p>
+        <span class="lesson-badge"><span data-en="">Age 4 and above &#183; One-on-One &#183; All Levels</span><span data-zh="">4歲以上 &#183; 一對一 &#183; 所有程度</span></span>
+      <span class="lesson-tap-hint"><span data-en="">Tap to learn more</span><span data-zh="">點擊了解更多</span></span>
+      </div>
+      <div class="lesson-card">
+        <span class="lesson-icon"><img src="images/icons/violin.png" alt="violin" width="107.5" height="131.6"></span>
+        <h3><span data-en="">Violin</span><span data-zh="">小提琴</span></h3>
+        <p><span data-en="">From beginner bowing techniques to advanced concerto repertoire. </span><span data-zh="">從初學者弓法到高級協奏曲。</span></p>
+        <span class="lesson-badge"><span data-en="">Age 4 and above &#183; One-on-One &#183; All Levels</span><span data-zh="">4歲以上 &#183; 一對一 &#183; 所有程度</span></span>
+      <span class="lesson-tap-hint"><span data-en="">Tap to learn more</span><span data-zh="">點擊了解更多</span></span>
+      </div>
+      <div class="lesson-card">
+        <span class="lesson-icon"><img src="images/icons/cello.png" alt="cello" width="120.4" height="138.18"></span>
+        <h3><span data-en="">Cello</span><span data-zh="">大提琴</span></h3>
+        <p><span data-en="">Deep, resonant and expressive, our cello programme nurtures tone, technique and musical sensitivity from the very first lesson.</span><span data-zh="">深沉、共鳴而富有表現力——我們的大提琴課程從第一堂課開始培養音色、技術和音樂敏感性。</span></p>
+        <span class="lesson-badge"><span data-en="">Age 5 and above &#183; One-on-One &#183; All Levels</span><span data-zh="">5歲以上 &#183; 一對一 &#183; 所有程度</span></span>
+      <span class="lesson-tap-hint"><span data-en="">Tap to learn more</span><span data-zh="">點擊了解更多</span></span>
+      </div>
+      <div class="lesson-card">
+        <span class="lesson-icon"><img src="images/icons/mic.png" alt="singing" width="71.7" height="71.1"></span>
+        <h3><span data-en="">Singing</span><span data-zh="">聲樂</span></h3>
+        <p><span data-en="">Vocal training covering breath control, pitch, tone and performance. Suitable for all ages — from beginner to advanced singers preparing for exams or recitals.</span><span data-zh="">聲樂訓練涵蓋呼吸控制、音準、音色和表演。適合所有年齡——從初學者到準備考試或音樂會的進階歌手。</span></p>
+        <span class="lesson-badge"><span data-en="">One-on-One &#183; All Levels</span><span data-zh="">一對一 &#183; 所有程度</span></span>
+      <span class="lesson-tap-hint"><span data-en="">Tap to learn more</span><span data-zh="">點擊了解更多</span></span>
+      </div>
+      <div class="lesson-card">
+        <span class="lesson-icon"><img src="images/icons/snare.png" alt="percussion" width="75.5" height="94.7"></span>
+        <h3><span data-en="">Percussion</span><span data-zh="">打擊樂</span></h3>
+        <p><span data-en="">Develop rhythm, coordination and dynamic control through structured percussion lessons. Covers a broad range of percussion instruments for all levels.</span><span data-zh="">透過有條理的打擊樂課程培養節奏感、協調性和動態控制。涵蓋各種打擊樂器，適合所有程度。</span></p>
+        <span class="lesson-badge"><span data-en="">One-on-One &#183; All Levels</span><span data-zh="">一對一 &#183; 所有程度</span></span>
+      <span class="lesson-tap-hint"><span data-en="">Tap to learn more</span><span data-zh="">點擊了解更多</span></span>
+      </div>
+      <div class="lesson-card">
+        <span class="lesson-icon"><img src="images/icons/marimba.png" alt="marimba" width="160" height="82.2"></span>
+        <h3><span data-en="">Marimba</span><span data-zh="">馬林巴琴</span></h3>
+        <p><span data-en="">Specialised marimba lessons focusing on mallet technique, musicality and repertoire — from classical to contemporary pieces.</span><span data-zh="">專業馬林巴琴課程，專注於槌法技術、音樂性和曲目——從古典到當代作品。</span></p>
+        <span class="lesson-badge"><span data-en="">One-on-One &#183; All Levels</span><span data-zh="">一對一 &#183; 所有程度</span></span>
+      <span class="lesson-tap-hint"><span data-en="">Tap to learn more</span><span data-zh="">點擊了解更多</span></span>
+      </div>
+      <div class="lesson-card">
+        <span class="lesson-icon"><img src="images/icons/theory.png" alt="music theory" width="86" height="119.6"></span>
+        <h3><span data-en="">Music Theory</span><span data-zh="">樂理</span></h3>
+        <p><span data-en="">Structured music theory classes covering notation, harmony, ear training and more, up to ABRSM Grade 8.</span><span data-zh="">有條理的樂理課程，涵蓋記譜法、和聲、聽音訓練等——至ABRSM八級。</span></p>
+        <span class="lesson-badge"><span data-en="">Group &amp; One-on-One</span><span data-zh="">小組及一對一</span></span>
+      <span class="lesson-tap-hint"><span data-en="">Tap to learn more</span><span data-zh="">點擊了解更多</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECITAL -->
+<section id="recital">
+  <div class="container">
+    <div class="recital-layout">
+      <div class="fade-in">
+        <p class="section-label"><span data-en="">Performances &amp; Events</span><span data-zh="">演出與活動</span></p>
+        <div class="divider"></div>
+        <h2 class="section-title"><span data-en="">Our Recital Hall</span><span data-zh="">我們的演奏廳</span></h2>
+        <p class="section-desc"><span data-en="">A dedicated performance space where students, families and music lovers come together to celebrate musical achievement.</span><span data-zh="">一個專屬的演出空間，學生、家長和音樂愛好者在此共同慶祝音樂成就。</span></p>
+        <div class="recital-features">
+          <div class="recital-feature">
+            <span class="feature-num">01</span>
+            <div class="feature-text">
+              <h4><span data-en="">Masterclasses</span><span data-zh="">大師班</span></h4>
+              <p><span data-en="">Opportunities for piano and strings masterclasses with visiting guest artists and educators.</span><span data-zh="">鋼琴和弦樂大師班，邀請客座藝術家和教育家參與。</span></p>
+            </div>
+          </div>
+          <div class="recital-feature">
+            <span class="feature-num">02</span>
+            <div class="feature-text">
+              <h4><span data-en="">Preparation for competition and exams</span><span data-zh="">備考和競賽</span></h4>
+              <p><span data-en="">A vibrant venue to host pre-competition and exam recitals to train students to play in front of an audience.</span><span data-zh="">這是一個充滿活力的場所，可舉辦賽前和考級匯報演出，以訓練學生在觀眾面前演奏。</span></p>
+            </div>
+          </div>
+          <div class="recital-feature">
+            <span class="feature-num">03</span>
+            <div class="feature-text">
+              <h4><span data-en="">Special Events</span><span data-zh="">特別活動</span></h4>
+              <p><span data-en="">A vibrant venue hosting many events throughout the year for our growing musical community.</span><span data-zh="">一個充滿活力的場地，全年舉辦許多活動，服務我們不斷成長的音樂社群。</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <img class="recital-img" id="recitalImg" src="images/photos/recital.jpg" alt="Student recital">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <p class="section-label fade-in"><span data-en="">Our Pride</span><span data-zh="">我們的驕傲</span></p>
+    <div class="divider"></div>
+    <h2 class="section-title fade-in"><span data-en="">Student <em>Achievements</em></span><span data-zh="">學生<em>成就</em></span></h2>
+    <p class="section-desc fade-in"><span data-en="">We celebrate every milestone — from first recitals to international competitions. Our students continue to inspire us with their dedication and growth.</span><span data-zh="">我們慶祝每一個里程碑——從第一次音樂會到國際比賽。我們的學生以他們的奉獻精神和成長不斷激勵著我們。</span></p>
+
+    <!-- Placeholder grid — replace img src when photos are ready -->
+    <div class="achievements-grid fade-in">
+      <div class="achievement-card"><img src="images/photos/achievement_1.jpg" alt="Achievement"></div>
+      <div class="achievement-card"><img src="images/photos/achievement_2.jpg" alt="Achievement"></div>
+      <div class="achievement-card"><img src="images/photos/achievement_3.jpg" alt="Achievement"></div>
+      <div class="achievement-card"><img src="images/photos/achievement_4.jpg" alt="Achievement"></div>
+    </div>
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS -->
+<section id="events">
+  <div class="container">
+    <p class="section-label fade-in"><span data-en="">📢 Follow us on Instagram and Facebook for the latest event updates.</span><span data-zh="">📢 關注我們的Instagram和Facebook以獲取最新活動資訊。</span></p>
+    <div class="divider"></div>
+    <h2 class="section-title fade-in"><span data-en=""><em>Events</em></span><span data-zh=""><em>活動</em></span></h2>
+    <p class="section-desc fade-in"><span data-en="">Stay updated on our recitals, masterclasses and special performances. More events will be announced soon.</span><span data-zh="">了解我們的音樂會、大師班和特別演出的最新資訊。更多活動即將公佈。</span></p>
+    <div class="events-grid fade-in">
+      <div class="event-card">
+        <div class="event-date">Oct</div>
+        <span class="event-month">2025</span>
+        <img src="images/photos/event_1.jpg" alt="" style="width:100%;height:180px;object-fit:cover;margin:16px 0 12px;">
+        <h3>Masterclass with Prof. Jaz Tan</h3>
+        <p></p>
+      </div>
+      <div class="event-card">
+        <div class="event-date">Nov</div>
+        <span class="event-month">2025</span>
+        <img src="images/photos/event_2.jpg" alt="" style="width:100%;height:180px;object-fit:cover;margin:16px 0 12px;">
+        <h3>Steinway Recital by Tee Jau Jer</h3>
+        <p></p>
+      </div>
+      <div class="event-card">
+        <div class="event-date">Nov</div>
+        <span class="event-month">2025</span>
+        <img src="images/photos/event_3.jpg" alt="" style="width:100%;height:180px;object-fit:cover;margin:16px 0 12px;">
+        <h3>ABRSM Examinations Preparation Recital</h3>
+        <p></p>
+      </div>
+    </div>
+    <p style="margin-top:32px;font-size:0.78rem;color:#8B5E3C;letter-spacing:0.08em;"><span data-en="">📢 Follow us on Instagram and Facebook for the latest event updates.</span><span data-zh="">📢 關注我們的Instagram和Facebook以獲取最新活動資訊。</span></p>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop">
+  <div class="container">
+    <p class="section-label fade-in"><span data-en="">Fine Instruments</span><span data-zh="">精良樂器</span></p>
+    <div class="divider"></div>
+    <h2 class="section-title fade-in"><span data-en="">Instrument Shop</span><span data-zh="">樂器商店</span></h2>
+    <p class="section-desc fade-in"><span data-en="">Handcrafted string instruments by Taiwanese luthier and Kawai pianos — authorised dealer.</span><span data-zh="">台灣製琴師手工製作的弦樂器及Kawai鋼琴——授權經銷商。</span></p>
+    <div class="shop-layout fade-in">
+      <div class="shop-img-block" onclick="openShopModal('strings')" style="cursor:pointer;">
+        <img id="shopStringsImg" src="images/photos/shop_strings.jpg" alt="Violins and Cellos">
+        <div class="shop-overlay-content">
+          <div class="shop-img-label"><span data-en="">Violins &amp; Cellos</span><span data-zh="">小提琴 &amp; 大提琴</span></div>
+          <span class="shop-tap-hint"><span data-en="">Tap for details</span><span data-zh="">點擊查看詳情</span></span>
+        </div>
+      </div>
+      <div class="shop-img-block" onclick="openShopModal('piano')" style="cursor:pointer;">
+        <img id="shopPianoImg" src="images/photos/shop_piano.jpg" alt="Kawai Pianos">
+        <div class="shop-overlay-content">
+          <div class="shop-img-label"><span data-en="">Kawai Pianos</span><span data-zh="">Kawai 鋼琴</span></div>
+          <span class="shop-tap-hint"><span data-en="">Tap for details</span><span data-zh="">點擊查看詳情</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label fade-in"><span data-en="">Get In Touch</span><span data-zh="">聯絡我們</span></p>
+    <div class="divider"></div>
+    <h2 class="section-title fade-in"><span data-en="">Visit Us</span><span data-zh="">拜訪我們</span></h2>
+    <div class="contact-grid fade-in">
+      <div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div><h4><span data-en="">Address</span><span data-zh="">地址</span></h4><p>VB04-01, No.1, Jalan Setia Murni U13/51,<br>Setia Alam, 40170 Shah Alam, Selangor, Malaysia</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div><h4><span data-en="">Phone / WhatsApp</span><span data-zh="">電話 / WhatsApp</span></h4><p>+60 12-298 8255</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div><h4><span data-en="">Email</span><span data-zh="">電子郵件</span></h4><p>cremonastrings@gmail.com</p></div>
+          </div>
+        </div>
+        <a href="https://wa.me/60122988255" target="_blank" class="wa-btn">
+          <svg viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+          <span data-en="">Chat on WhatsApp</span><span data-zh="">WhatsApp 聊天</span>
+        </a>
+      </div>
+      <div>
+        <div class="map-wrapper">
+          <iframe src="https://maps.google.com/maps?q=Cremona+Music+of+Strings+Setia+Alam&output=embed&z=16" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <span class="modal-icon" id="modalIcon"></span>
+    <h2 class="modal-title" id="modalTitle"></h2>
+    <p class="modal-subtitle" id="modalSubtitle"></p>
+    <div class="modal-divider"></div>
+    <p class="modal-desc" id="modalDesc"></p>
+    <div class="modal-features" id="modalFeatures"></div>
+    <a href="https://wa.me/60122988255" target="_blank" class="modal-cta">
+      <svg viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+      <span data-en="">Enquire via WhatsApp</span><span data-zh="">WhatsApp 查詢</span>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img id="footerLogoImg" src="" alt="Cremona"></div>
+    <div style="color:rgba(248,243,236,0.55);font-size:0.78rem;line-height:1.7;">
+      VB04-01, No.1, Jalan Setia Murni U13/51, Setia Alam<br>
+      40170 Shah Alam, Selangor, Malaysia · +60 12-298 8255
+    </div>
+    <div class="social-links">
+      <a href="https://wa.me/60122988255" target="_blank" title="WhatsApp">
+        <svg width="15" height="15" viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+      </a>
+      <a href="https://www.facebook.com/share/1AdGYzPMc4/?mibextid=wwXIfr" target="_blank" title="Facebook">
+        <svg width="15" height="15" viewbox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"></path></svg>
+      </a>
+      <a href="https://www.instagram.com/cremonamusicschool?igsh=MTNhenJqM3VhenI0Mg==" target="_blank" title="Instagram">
+        <svg width="15" height="15" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+      </a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2025 Cremona Music of Strings 台北音樂工作室 · All Rights Reserved</p>
+</footer>
+
+
+<!-- FLOATING BUTTONS -->
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="js/script.js"></script>
+
+
+</body>
+</html>
