@@ -28,7 +28,7 @@ nav {
 .nav-logo { margin-left:-6px; }
 .nav-logo img { height:48px; filter:sepia(1) saturate(3) hue-rotate(5deg) brightness(0.42) contrast(1.1); }
 
-@media (max-width:767px) {
+@media (max-width:490px) {
   #navLogoImg { display:none; }
   #navLogoMobile {
     display:block !important;
