@@ -28,7 +28,7 @@ nav {
 .nav-logo { margin-left:-6px; }
 .nav-logo img { height:48px; filter:sepia(1) saturate(3) hue-rotate(5deg) brightness(0.42) contrast(1.1); }
 
-@media (max-width:1000px) {
+@media (max-width:767px) {
   #navLogoImg { display:none; }
   #navLogoMobile {
     display:block !important;
@@ -50,7 +50,7 @@ body.zh .nav-links a {
 }
 @media (max-width:1200px) and (min-width:1001px) {
   .nav-inner { padding:0 14px; }
-  .nav-logo img { height:42px; }
+  .nav-logo img { height:48px; }
   .nav-links { gap:10px; }
   .nav-links a { font-size:0.58rem; letter-spacing:0.08em; }
   body.zh .nav-links a { font-size:0.68rem; letter-spacing:0.02em; }
